@@ -33,7 +33,7 @@ func NewHook(levelMap PathMap) *lfsHook {
 }
 
 func NewHookFor(loggers map[logrus.Level]*lumberjack.Logger) *lfsHook {
-    hook := &lfsHook{
+	hook := &lfsHook{
 	    loggers: loggers,
 	}
 	for level, _ := range loggers {
