@@ -8,17 +8,17 @@ import (
 var log *logrus.Logger
 
 func init() {
-    log = logrus.New()
-    log.Formatter = new(logrus.JSONFormatter)
-    
-    log.Hooks.Add(rotatelog.NewHook(rotatelog.PathMap{
-        logrus.DebugLevel : `debug.log`,
-        logrus.InfoLevel : `info.log`,
-        logrus.WarnLevel : `warning.log`,
-        logrus.ErrorLevel : `error.log`,
-        logrus.FatalLevel : `fatal.log`,
-        logrus.PanicLevel : `panic.log`,
-    }) )
+	log = logrus.New()
+	log.Formatter = new(logrus.JSONFormatter)
+	
+	log.Hooks.Add(rotatelog.NewHook(rotatelog.PathMap{
+		logrus.DebugLevel : `debug.log`,
+		logrus.InfoLevel : `info.log`,
+		logrus.WarnLevel : `warning.log`,
+		logrus.ErrorLevel : `error.log`,
+		logrus.FatalLevel : `fatal.log`,
+		logrus.PanicLevel : `panic.log`,
+	}) )
 	log.Level = logrus.DebugLevel
 }
 
