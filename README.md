@@ -4,7 +4,7 @@
 </br>
 例子: [example.go](https://github.com/sunrongya/rotatelog/blob/master/example/example.go)
     
-    `import (
+import (
 	"github.com/Sirupsen/logrus"
 	"github.com/sunrongya/rotatelog"
 )
@@ -61,5 +61,5 @@ func main() {
 		"animal": "orca",
 		"size":   9009,
 	}).Panic("It's over 9000!")
-}`
+}
 
