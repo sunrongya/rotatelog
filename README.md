@@ -2,5 +2,5 @@
 </br>
 封装 Sirupsen/logrus、natefinch/lumberjack
 </br>  
-例子见 example/example.go
+例子: example/example.go
 
