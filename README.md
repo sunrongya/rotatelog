@@ -1,5 +1,4 @@
-# 分等级循环写日志库
-</br>
+# 等级循环日志库
 </br>
 封装 Sirupsen/logrus、natefinch/lumberjack
 </br>  
