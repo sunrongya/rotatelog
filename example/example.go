@@ -13,8 +13,8 @@ func init() {
 	
 	log.Hooks.Add(rotatelog.NewHook(rotatelog.PathMap{
 		logrus.DebugLevel : `debug.log`,
-		logrus.InfoLevel : `info.log`,
-		logrus.WarnLevel : `warning.log`,
+		logrus.InfoLevel :  `info.log`,
+		logrus.WarnLevel :  `warning.log`,
 		logrus.ErrorLevel : `error.log`,
 		logrus.FatalLevel : `fatal.log`,
 		logrus.PanicLevel : `panic.log`,
