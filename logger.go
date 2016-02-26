@@ -17,15 +17,15 @@ type lfsHook struct {
 
 func NewHook(levelMap PathMap) *lfsHook {
 	hook := &lfsHook{
-	    loggers: make(map[logrus.Level]*lumberjack.Logger, len(levelMap) ),
+		loggers: make(map[logrus.Level]*lumberjack.Logger, len(levelMap) ),
 	}
 	for level, filename := range levelMap {
-	    hook.loggers[level] = &lumberjack.Logger{
-	        Filename:   filename,
-	        MaxSize:    500, // megabytes
-	        MaxBackups: 3,
-	        MaxAge:     28,  // days
-	    }
+		hook.loggers[level] = &lumberjack.Logger{
+			Filename:   filename,
+			MaxSize:    500, // megabytes
+			MaxBackups: 3,
+			MaxAge:     28,  // days
+		}
 		hook.levels = append(hook.levels, level)
 	}
 	
@@ -33,9 +33,7 @@ func NewHook(levelMap PathMap) *lfsHook {
 }
 
 func NewHookFor(loggers map[logrus.Level]*lumberjack.Logger) *lfsHook {
-	hook := &lfsHook{
-	    loggers: loggers,
-	}
+	hook := &lfsHook{ loggers: loggers }
 	for level, _ := range loggers {
 		hook.levels = append(hook.levels, level)
 	}
@@ -46,7 +44,7 @@ func NewHookFor(loggers map[logrus.Level]*lumberjack.Logger) *lfsHook {
 func (hook *lfsHook) Fire(entry *logrus.Entry) error {
 	logger, ok := hook.loggers[entry.Level]
 	if !ok {
-	    err := fmt.Errorf("no file provided for loglevel: %d", entry.Level)
+		err := fmt.Errorf("no file provided for loglevel: %d", entry.Level)
 		log.Println(err.Error())
 		return err
 	}
